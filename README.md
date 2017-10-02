@@ -29,7 +29,7 @@ The dataset was constructed using a script that calls Wikipedia API for every pa
 https://en.wikipedia.org/w/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
 ```
 
-The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries separated by '|||'. Every line in the document represents a wikipedia article. Example from `tokenized.txt`:
+The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries separated by `|||`. Every line in the document represents a wikipedia article. Example from `tokenized.txt`:
 
 ```
 Anarchism ||| Anarchism is a political philosophy that advocates self-governed societies based on voluntary…
