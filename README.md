@@ -61,7 +61,7 @@ is 7770405
 Dataset construction
 -----
 
-The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted artifacts is the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extension. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
+The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted artifacts is constructing them by using the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extension. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
 
 The actual downloading is done using `download.py` and stores the raw JSON output of the API in a separate folder. Afterwards the script `process.py` can combine all these API responses into two big files, i.e. a `.txt` file and a `.vocab` file.
 
