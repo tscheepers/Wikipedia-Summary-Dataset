@@ -33,10 +33,10 @@ Download
 Dataset construction
 -----
 
-The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. This API call used the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extension to create the summaries or introductions.
+The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted articats is the TextExtracts extsnsion. So the API call we used, also uses the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extension to create the summaries or introductions. As you can imagine, this takes quite a while.
 
 ```
-https://en.wikipedia.org/w/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
+https://{wikipedia_installation}/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
 ```
 
 The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries separated by `|||`. Every line in the document represents a wikipedia article. Example from `tokenized.txt`:
@@ -64,5 +64,6 @@ is 7770405
 …
 ```
 
-Scripts to create the dataset are provided in this repository. They require a local Wikipedia installation and access to its MySQL database to get the page identifiers (`page_id`). Additionally we would ask you not to build the dataset yourself if this is not needed, since building the dataset would require calling the Wikipedia API for every page and this puts strain on their API. **Please respect the `maxlag=5` parameter.**
+Scripts to create the dataset are provided in this [repository](src). They require a local Wikipedia installation and access to its MySQL database filled with data to get the page identifiers (`page_id`). You can fill a MySQL database with the wikipedia data from the dump using [MWDumper](https://github.com/wikimedia/mediawiki-tools-mwdumper).
 
+Additionally we would ask you not to build the dataset using the official Wikipedia API if this is not needed, since building the dataset would require calling the API for every page and this puts strain on their public API. **Please respect the `maxlag=5` parameter if you use the official API `en.wikipedia.org/w/api.php`.**
