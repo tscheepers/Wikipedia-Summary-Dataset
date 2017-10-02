@@ -13,12 +13,22 @@ The raw dataset leaves the original text structure intact. Additionally, we prov
 
 File | Tokenized | Lowercased | No Punctuation | No stop words | Stemmed
 --- | --- | --- | --- | --- | ---
-*raw.txt* |  |  |  |  |  |
-*tokenized.txt* | ✓ |  |  |  |  |
-*lowercased.txt* | ✓ | ✓ |  |  |  |
-*without-punctuation.txt* | ✓ | ✓ | ✓ |  |  |
-*without-stop-words.txt* | ✓ | ✓ | ✓ | ✓ |  |
-*stemmed.txt* | ✓ | ✓ | ✓ | ✓ | ✓ |
+[*raw.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/raw.tar.gz) |  |  |  |  |  |
+[*tokenized.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/tokenized.tar.gz) | ✓ |  |  |  |  |
+[*lowercased.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/lowercased.tar.gz) | ✓ | ✓ |  |  |  |
+[*without-punctuation.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/without-punctuation.tar.gz) | ✓ | ✓ | ✓ |  |  |
+[*without-stop-words.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/without-stop-words.tar.gz) | ✓ | ✓ | ✓ | ✓ |  |
+[*stemmed.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/stemmed.tar.gz) | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+Download
+-----
+
+- [*raw.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/raw.tar.gz) (± 1GB)
+- [*tokenized.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/tokenized.tar.gz) (± 1GB)
+- [*lowercased.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/lowercased.tar.gz) (± 1GB)
+- [*without-punctuation.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/without-punctuation.tar.gz) (± 1GB)
+- [*without-stop-words.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/without-stop-words.tar.gz) (± 1GB)
+- [*stemmed.tar.gz*](https://blob.thijs.ai/wiki-summary-dataset/stemmed.tar.gz) (± 1GB)
 
 Dataset construction
 -----
