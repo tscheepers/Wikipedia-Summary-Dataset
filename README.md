@@ -3,7 +3,7 @@ Wikipedia Summary Dataset
 
 This is a dataset that can be used for research into machine learning and netural language processing. It contains all titles and summaries (or introductions) of English Wikipedia articles, extracted in september of 2017.
 
-The dataset is different from the [wikipedia dump](https://dumps.wikimedia.org/backup-index.html) datasets and different from the datasets that can be created by [gensim](http://textminingonline.com/training-word2vec-model-on-english-wikipedia-by-gensim) because ours contains the extracted summaries and not the entire unprocessed page body. This could be usefull if one wants to use the smaller, more consice, and more definitional summaries in their research.
+The dataset is different from the [wikipedia dump](https://dumps.wikimedia.org/backup-index.html) datasets and different from the datasets that can be created by [gensim](http://textminingonline.com/training-word2vec-model-on-english-wikipedia-by-gensim) because ours contains the extracted summaries and not the entire unprocessed page body. This could be usefull if one wants to use the smaller, more consice, and more definitional summaries in their research. Or if one just wants to use a smaller but still diverse dataset for efficient training with resource constraints.
 
 A summary or introduction of an article is everything starting from the page title up to the content outline.
 
