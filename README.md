@@ -33,7 +33,7 @@ Download
 Dataset construction
 -----
 
-The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted articats is the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts extsnsion. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
+The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted articats is the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extsnsion. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
 
 ```
 https://{wikipedia_installation}/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
