@@ -29,7 +29,7 @@ The dataset was constructed using a script that calls wikipedia api for every pa
 https://en.wikipedia.org/w/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
 ```
 
-The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries seperated by '|||'. Every line in the document represents a wikipedia article. Example:
+The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries seperated by '|||'. Every line in the document represents a wikipedia article. Example from `tokenized.txt`:
 
 ```
 Anarchism ||| Anarchism is a political philosophy that advocates self-governed societies based on voluntary…
@@ -38,7 +38,7 @@ Albedo ||| Albedo ( ) is a measure for reflectance or optical brightness ( Latin
 …
 ```
 
-As well as a `.vocab` file which contains the vocabulary and the count of each token. Example:
+As well as a `.vocab` file which contains the vocabulary and the count of each token. Example from `tokenized.vocab`:
 
 ```
 , 27222735
@@ -53,9 +53,6 @@ is 7770405
 ( 7459977
 …
 ```
-
-Scripts to create the create the dataset
----
 
 Scripts to create the dataset are provided in this repository. They require a local wikipedia installation and access to its MySQL database to get the page identifiers (`page_id`). Additionally we would ask you not to build the dataset youself if this is not needed, since building the dataset would require calling the Wikipedia API for every page and this puts strain on their API. **Please respect the `maxlag=5` parameter.**
 
