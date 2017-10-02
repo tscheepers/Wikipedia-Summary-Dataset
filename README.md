@@ -63,6 +63,10 @@ Dataset construction
 
 The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted artifacts is constructing them by using the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extension. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
 
+```
+https://en.wikipedia.org/w/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
+```
+
 The actual downloading is done using `download.py` and stores the raw JSON output of the API in a separate folder. Afterwards the script `process.py` can combine all these API responses into two big files, i.e. a `.txt` file and a `.vocab` file.
 
 Scripts to create the dataset are provided in this [repository](src). They require a local Wikipedia installation and access to its MySQL database filled with data to get the page identifiers (`page_id`). You can fill a MySQL database with the Wikipedia data from the dump using [MWDumper](https://github.com/wikimedia/mediawiki-tools-mwdumper).
