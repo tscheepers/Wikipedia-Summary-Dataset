@@ -23,12 +23,12 @@ File | Tokenized | Lowercased | No Punctuation | No stop words | Stemmed
 Download
 -----
 
-- [💾 **raw.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/raw.tar.gz) (± 1GB, 5,315,384 articles)
-- [💾 **tokenized.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/tokenized.tar.gz) (± 1GB; 5,627,475 vocab; 5,315,384 articles)
-- [💾 **lowercased.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/lowercased.tar.gz) (± 1GB; 5.172.571 vocab; 5,315,384 articles)
-- [💾 **without-punctuation.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/without-punctuation.tar.gz) (± 1GB; 5,171,326 vocab; 5,315,384 articles)
-- [💾 **without-stop-words.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/without-stop-words.tar.gz) (± 1GB; 5,171,164 vocab; 5,315,384 articles)
-- [💾 **stemmed.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/stemmed.tar.gz) (± 1GB; 5,171,326 vocab; 5,315,384 articles)
+- [💾 **raw.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/raw.tar.gz) (± 1GB; 459,081,607 words; 5,315,384 articles)
+- [💾 **tokenized.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/tokenized.tar.gz) (± 1GB; 533,211,092 words; 5,627,475 vocab; 5,315,384 articles)
+- [💾 **lowercased.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/lowercased.tar.gz) (± 1GB; 533,211,092 words; 5.172.571 vocab; 5,315,384 articles)
+- [💾 **without-punctuation.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/without-punctuation.tar.gz) (± 1GB;  461,749,888 words; 5,171,326 vocab; 5,315,384 articles)
+- [💾 **without-stop-words.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/without-stop-words.tar.gz) (± 0.8GB; 296,210,530 words; 5,171,164 vocab; 5,315,384 articles)
+- [💾 **stemmed.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/stemmed.tar.gz) (± 0.8GB; 5,171,326 vocab; 5,315,384 articles)
 
 Dataset construction
 -----
