@@ -1,7 +1,7 @@
 Wikipedia Summary Dataset
 ======
 
-This is a dataset that can be used for research into machine learning and natural language processing. It contains all titles and summaries (or introductions) of English Wikipedia articles, extracted in *september of 2017*.
+This is a dataset that can be used for research into machine learning and natural language processing. It contains all titles and summaries (or introductions) of English Wikipedia articles, extracted in *September of 2017*.
 
 The dataset is different from the [wikipedia dump](https://dumps.wikimedia.org/backup-index.html) datasets and different from the datasets that can be created by [gensim](http://textminingonline.com/training-word2vec-model-on-english-wikipedia-by-gensim) because ours contains the extracted summaries and not the entire unprocessed page body. This could be useful if one wants to use the smaller, more concise, and more definitional summaries in their research. Or if one just wants to use a smaller but still diverse dataset for efficient training with resource constraints.
 
@@ -30,16 +30,12 @@ Download
 - [💾 **without-stop-words.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/without-stop-words.tar.gz) (± 0.8GB; 296,210,530 words; 5,171,164 vocab; 5,315,384 articles)
 - [💾 **stemmed.tar.gz**](http://blob.thijs.ai/wiki-summary-dataset/stemmed.tar.gz) (± 0.8GB; 5,171,326 vocab; 5,315,384 articles)
 
-Dataset construction
------
+Dataset contents
+----
 
-The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted articats is the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extsnsion. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
+The tarbals contain two files. A `.txt` file and a `.vocab` file. The `.txt` file contains all the necessary data. Each line represents an article and contains both a title and a summary separated by `|||`. The lines are ordered by Wikipedia `page_id`. If you want to create a smaller test dataset, I would suggest sampling lines from the file and not splitting it directly.
 
-```
-https://{wikipedia_installation}/api.php?format=json&maxlag=5&action=query&prop=extracts&exintro=&explaintext=&pageids=123|456|789
-```
-
-The results from all these calls are then combined into two big files. A `.txt` file containing all the article titles and their respective summaries separated by `|||`. Every line in the document represents a wikipedia article. Example from `tokenized.txt`:
+Example from `tokenized.txt`:
 
 ```
 Anarchism ||| Anarchism is a political philosophy that advocates self-governed societies based on voluntary…
@@ -48,7 +44,7 @@ Albedo ||| Albedo ( ) is a measure for reflectance or optical brightness ( Latin
 …
 ```
 
-As well as a `.vocab` file which contains the vocabulary and the count of each token. Example from `tokenized.vocab`:
+There is also a `.vocab` file which contains the vocabulary and the count of each token. Example from `tokenized.vocab`:
 
 ```
 , 27222735
@@ -59,11 +55,16 @@ in 13313133
 and 12630336
 a 10202887
 is 7770405
-) 7460943
-( 7459977
 …
 ```
 
+Dataset construction
+-----
+
+The dataset was constructed using a script that calls Wikipedia API for every page with their `page_id`. The correct way to construct summaries without any unwanted articats is the [TextExtracts](https://www.mediawiki.org/wiki/Extension:TextExtracts) extsnsion. So the API call we used, also uses the TextExtracts extension to create the summaries or introductions. As you can imagine, this takes quite a while.
+
+The actual downloading is done using `download.py` and stores the raw json output of the API in a seperate folder. Afterwards the script `process.py` can combine all these API responses into two big files, i.e. a `.txt` file and a `.vocab` file.
+
 Scripts to create the dataset are provided in this [repository](src). They require a local Wikipedia installation and access to its MySQL database filled with data to get the page identifiers (`page_id`). You can fill a MySQL database with the wikipedia data from the dump using [MWDumper](https://github.com/wikimedia/mediawiki-tools-mwdumper).
 
-Additionally we would ask you not to build the dataset using the official Wikipedia API if this is not needed, since building the dataset would require calling the API for every page and this puts strain on their public API. **Please respect the `maxlag=5` parameter if you use the official API `en.wikipedia.org/w/api.php`.**
+Additionally, we would ask you not to build the dataset using the official Wikipedia API if this is not needed, since building the dataset would require calling the API for every page and this puts strain on their public API. **Please respect the `maxlag=5` parameter if you use the official API `en.wikipedia.org/w/api.php`.**
