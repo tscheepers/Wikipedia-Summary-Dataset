@@ -72,3 +72,23 @@ The actual downloading is done using `download.py` and stores the raw JSON outpu
 Scripts to create the dataset are provided in this [repository](src). They require a local Wikipedia installation and access to its MySQL database filled with data to get the page identifiers (`page_id`). You can fill a MySQL database with the Wikipedia data from the dump using [MWDumper](https://github.com/wikimedia/mediawiki-tools-mwdumper).
 
 Additionally, we would ask you not to build the dataset using the official Wikipedia API if this is not needed, since building the dataset would require calling the API for every page and this puts strain on their public API. **Please respect the `maxlag=5` parameter if you use the official API `en.wikipedia.org/w/api.php`.**
+
+Research Publications
+---
+
+- **Improving Word Embedding Compositionality using Lexicographic Definitions** _(will be published and presented at [WWW '18](https://www2018.thewebconf.org/))_
+- **Improving the Compositionality of Word Embeddings** [Thesis PDF](https://thijs.ai/papers/scheepers-msc-thesis-2017-improving-compositionality-word-embeddings.pdf), [Presentation PDF](https://thijs.ai/papers/scheepers-msc-thesis-presentation.pdf)
+- **Analyzing the compositional properties of word embeddings** [Paper PDF](https://thijs.ai/papers/scheepers-gavves-kanoulas-analyzing-compositional-properties.pdf)
+
+Please cite the following paper, if you use this code for your own research:
+
+```
+@inproceedings{scheepers2017lexicographic,
+  author    = {Scheepers, Thijs and Kanoulas, Evangelos and Gavves, Efstratios},
+  title     = {Improving Word Embedding Compositionality using Lexicographic Definitions},
+  year      = {2017},
+  location  = {Lyon, France},
+  publisher = {International World Wide Web Conferences Steering Committee},
+  address   = {Republic and Canton of Geneva, Switzerland}
+} 
+```
