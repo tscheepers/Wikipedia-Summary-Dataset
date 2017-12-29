@@ -83,12 +83,12 @@ Research Publications
 Please cite the following paper, if you use our data or code for your own research:
 
 ```
-@inproceedings{scheepers2017lexicographic,
-  author    = {Scheepers, Thijs and Kanoulas, Evangelos and Gavves, Efstratios},
-  title     = {Improving Word Embedding Compositionality using Lexicographic Definitions},
-  year      = {2017},
-  location  = {Lyon, France},
-  publisher = {International World Wide Web Conferences Steering Committee},
-  address   = {Republic and Canton of Geneva, Switzerland}
-} 
+@mastersthesis{scheepers2017compositionality,
+  author  = {Scheepers, Thijs}, 
+  title   = {Improving the Compositionality of Word Embeddings},
+  school  = {Universiteit van Amsterdam},
+  year    = {2017},
+  month   = {11},
+  address = {Science Park 904, Amsterdam, Netherlands}
+}
 ```
