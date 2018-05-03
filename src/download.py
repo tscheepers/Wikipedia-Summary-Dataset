@@ -13,8 +13,6 @@ import os.path
 import sys
 
 
-NUM_OF_ARTICLES = 5330933
-
 # Database connection information
 DATABASE_HOST = 'localhost'
 DATABASE_USER = 'root'
@@ -37,16 +35,17 @@ def fetch_pageids(start=0):
 
     connection = mysql_connection()
 
-    n_articles = NUM_OF_ARTICLES
     limit = 20
-
-    end = int( math.ceil(n_articles / limit) )
 
     start_time = time.time()
     last_print_time = time.time()
 
     try:
         with connection.cursor() as cursor:
+
+            cursor.execute("SELECT count(*) FROM page WHERE page_is_redirect = 0 AND page_namespace = 0")
+            n_articles = int( cursor.fetchall()[0][0] )
+            end = int( math.ceil(n_articles / limit) )
 
             for i in range(start, end):
 
