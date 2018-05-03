@@ -1,0 +1,3 @@
+[submodule "mediawiki-tools-mwdumper"]
+	path = mediawiki-tools-mwdumper
+	url = https://github.com/wikimedia/mediawiki-tools-mwdumper
