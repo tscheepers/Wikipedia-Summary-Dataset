@@ -2,15 +2,9 @@
 import json
 import sys
 
-import pickle
 import pymysql.cursors
 import os
-from nltk import word_tokenize
-from nltk.corpus import stopwords
-from collections import defaultdict
-from nltk.stem.porter import *
-import hashlib
-import urllib
+import urllib.request
 import json
 import time
 import math
