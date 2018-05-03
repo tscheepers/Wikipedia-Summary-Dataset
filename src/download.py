@@ -2,15 +2,9 @@
 import json
 import sys
 
-import pickle
 import pymysql.cursors
 import os
-from nltk import word_tokenize
-from nltk.corpus import stopwords
-from collections import defaultdict
-from nltk.stem.porter import *
-import hashlib
-import urllib
+import urllib.request
 import json
 import time
 import math
@@ -18,8 +12,6 @@ import os.path
 
 import sys
 
-
-NUM_OF_ARTICLES = 5330933
 
 # Database connection information
 DATABASE_HOST = 'localhost'
@@ -43,16 +35,17 @@ def fetch_pageids(start=0):
 
     connection = mysql_connection()
 
-    n_aricles = NUM_OF_ARTICLES
     limit = 20
-
-    end = math.ceil(n_aricles / limit)
 
     start_time = time.time()
     last_print_time = time.time()
 
     try:
         with connection.cursor() as cursor:
+
+            cursor.execute("SELECT count(*) FROM page WHERE page_is_redirect = 0 AND page_namespace = 0")
+            n_articles = int( cursor.fetchall()[0][0] )
+            end = int( math.ceil(n_articles / limit) )
 
             for i in range(start, end):
 
@@ -91,11 +84,11 @@ def fetch_pageids(start=0):
                         duration_per_item = duration / (((i - start) * limit) + 1)
                         items_per_second = 1 / duration_per_item
 
-                        articles_left = n_aricles - offset
+                        articles_left = n_articles - offset
 
                         eta = articles_left * duration_per_item / 60
 
-                        print("%d: %d/%d   %.0f p/s   %.0f minutes left" % (i, offset, n_aricles, items_per_second, eta))
+                        print("%d: %d/%d   %.0f p/s   %.0f minutes left" % (i, offset, n_articles, items_per_second, eta))
 
     finally:
         connection.close()
