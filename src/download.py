@@ -40,7 +40,7 @@ def fetch_pageids(start=0):
     n_aricles = NUM_OF_ARTICLES
     limit = 20
 
-    end = math.ceil(n_aricles / limit)
+    end = int( math.ceil(n_aricles / limit) )
 
     start_time = time.time()
     last_print_time = time.time()
