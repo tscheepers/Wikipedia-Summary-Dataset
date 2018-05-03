@@ -37,10 +37,10 @@ def fetch_pageids(start=0):
 
     connection = mysql_connection()
 
-    n_aricles = NUM_OF_ARTICLES
+    n_articles = NUM_OF_ARTICLES
     limit = 20
 
-    end = int( math.ceil(n_aricles / limit) )
+    end = int( math.ceil(n_articles / limit) )
 
     start_time = time.time()
     last_print_time = time.time()
@@ -85,11 +85,11 @@ def fetch_pageids(start=0):
                         duration_per_item = duration / (((i - start) * limit) + 1)
                         items_per_second = 1 / duration_per_item
 
-                        articles_left = n_aricles - offset
+                        articles_left = n_articles - offset
 
                         eta = articles_left * duration_per_item / 60
 
-                        print("%d: %d/%d   %.0f p/s   %.0f minutes left" % (i, offset, n_aricles, items_per_second, eta))
+                        print("%d: %d/%d   %.0f p/s   %.0f minutes left" % (i, offset, n_articles, items_per_second, eta))
 
     finally:
         connection.close()
